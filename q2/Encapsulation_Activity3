@@ -1,0 +1,33 @@
+#this is just incase
+
+class bankAccount:
+  def __init__(self, accountNum, balance):
+    self.__accountNum = accountNum
+    self.__balance = balance
+    self.set_balance(balance)
+
+  def set_accountNum(self, accountNum):
+    self.__accountNum = accountNum
+
+  def set_balance(self, balance):
+    if balance > 0:
+      self.__balance = balance
+    else:
+      print("The balance must not be a negative number")
+
+  def get_accountNum(self):
+    return self.__accountNum
+
+  def get_balance(self):
+    return self.__balance
+
+a1 = bankAccount("12345", 1000)
+
+print(a1.get_accountNum())
+print(a1.get_balance())
+
+a1.set_accountNum("676767")
+a1.set_balance(-100)
+
+print(a1.get_accountNum())
+print(a1.get_balance())
