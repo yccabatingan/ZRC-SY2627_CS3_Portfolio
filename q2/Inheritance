@@ -1,0 +1,84 @@
+# trial
+# grandparent class
+class campusDirector:
+  def __init__(self, CDname):
+    self.CDname = CDname
+
+  def set_CDname(self, CDname):
+    self.CDname = CDname
+
+  def get_CDname(self):
+    return self.CDname
+
+# parent class
+class studentService(campusDirector):
+  def __init__(self, CDname, dorm):
+    super().__init__(CDname)
+    self.dorm = dorm
+
+  def set_dorm(self, dorm):
+    self.dorm = dorm
+
+  def get_dorm(self):
+    return self.dorm
+
+# parent class
+class curriculumDep(campusDirector):
+  def __init__(self, CDname, location, gradeLVL, budget):
+    super().__init__(CDname)
+    self.location = location
+    self.gradeLVL = gradeLVL
+    self.budget = budget
+
+  def set_budget(self, budget):
+    if budget > 0:
+      self.budget = budget
+    else:
+      print("ERROR: The budget must be more than zero.")
+
+  def get_budget(self):
+    return self.budget
+
+# kid class
+class elementary(curriculumDep):
+  def __init__(self, CDname, location, gradeLVL, budget, studentCount):
+    super().__init__(CDname, location, gradeLVL, budget)
+    self.studentCount = studentCount
+
+  def get_studentCount(self):
+    return self.studentCount
+
+# kid class
+class juniorHigh(curriculumDep):
+  def __init__(self, CDname, location, gradeLVL, budget, studentCount):
+    super().__init__(CDname, location, gradeLVL, budget)
+    self.studentCount = studentCount
+
+  def get_studentCount(self):
+    return self.studentCount
+
+# kid class
+class seniorHigh(curriculumDep):
+  def __init__(self, CDname, location, gradeLVL, budget, studentCount):
+    super().__init__(CDname, location, gradeLVL, budget)
+    self.studentCount = studentCount
+
+  def get_studentCount(self):
+    return self.studentCount
+
+# kid class
+class dormitory(studentService):
+  def __init__(self, CDname, dorm, capacity):
+    super().__init__(CDname, dorm)
+    self.capacity = capacity
+
+  def get_capacity(self):
+    return self.capacity
+
+# test 1
+shs1 = seniorHigh("Mr. Campus Director", "ZRC", "Grades 11-12", 1000000, 150)
+print("Senior High Student Count:", shs1.get_studentCount())
+
+# test 2
+dorm1 = dormitory("Mr. Campus Director", "Girl's Dormitory", 100)
+print("Dormitory Capacity:", dorm1.get_capacity())
