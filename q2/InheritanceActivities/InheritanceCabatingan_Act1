@@ -1,0 +1,7 @@
+Yoanna Glorien C. Cabatingan Activity1
+
+#1. What is/are the parent class/es of the Programmer class in the video?
+Answer: The parent class of the "Programmer" class is the "Employee" class.
+
+#2. If you were to add a new role called Intern, where would you place it in the inheritance hierarchy? Why?
+Answer: I would put the Intern under the Programmer. Although it would make more sense to have an Intern under a Manager, the Programmer will pass on the ability to attend training, whilst the manager will pass on an ability called review staff which doesn't make sense because why would the Intern have any staff?
